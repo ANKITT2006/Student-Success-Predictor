@@ -2,85 +2,83 @@
 
 ## 📌 Overview
 
-The **Student Success Predictor** is a machine learning project designed to analyze student data and predict academic outcomes such as pass/fail status, grades, or overall performance. The goal is to help educators and institutions identify at-risk students early and take proactive measures to improve their success rates.
+The **Student Success Predictor** is a machine learning system designed to analyze student academic and behavioral indicators, benchmark multiple ML models, and predict academic outcomes (Pass / Fail) with confidence probabilities and personalized actionable recommendations.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-* 📊 Predict student performance using ML models
-* 🧠 Supports multiple algorithms (e.g., Logistic Regression, Random Forest, etc.)
-* 📈 Data visualization for insights and trends
-* ⚡ Easy-to-use interface (CLI / Web-based, depending on your project)
-* 🔍 Feature importance analysis to understand key factors affecting success
+* 🧠 **Multi-Model Benchmarking**: Trains and evaluates **5 machine learning algorithms**:
+  - Logistic Regression
+  - Random Forest Classifier
+  - Decision Tree Classifier
+  - Support Vector Machine (SVC with Probability Calibration)
+  - Gradient Boosting Classifier
+* 📊 **Comprehensive Metrics**: Evaluates models on **Accuracy, Precision, Recall, F1-Score**, and generates **Confusion Matrices**.
+* ⚡ **Intelligent Auto-Selection**: Automatically picks the best-performing model based on F1-Score while allowing users to switch models dynamically.
+* 🔮 **What-If Improvement Simulator**: Simulates how incremental improvements in attendance (+10%), study hours (+1-2h), or assignment marks directly raise success probability.
+* 📈 **Auto-Generated Visualizations**:
+  - `model_comparison.png`: Side-by-side grouped bar chart comparing Accuracy and F1-score across all 5 models.
+  - `feature_importance.png`: Feature impact rankings from Random Forest.
+  - `confusion_matrix.png`: Heatmap breakdown of classification performance.
+* 📁 **Batch CSV Prediction**: Generates sample CSV files and processes bulk student records to export enriched prediction files (`predictions_output.csv`).
+* 💡 **Personalized AI Action Plans**: Context-aware risk classification (Low, Moderate, Elevated, Critical) and targeted advice tailored to student strengths and weaknesses.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Programming Language:** Python
-* **Libraries & Frameworks:**
-
+* **Programming Language:** Python 3
+* **Libraries:**
   * NumPy
   * Pandas
-  * Scikit-learn
+  * Scikit-Learn
+  * Matplotlib
+  * Colorama
 
 ---
 
-## 📊 Dataset
+## 💻 How to Run
 
-The dataset includes features such as:
+### 1. Interactive CLI (Recommended)
+Launch the interactive menu to run single-student predictions, what-if simulations, model switching, and chart generation:
+```bash
+python student_success_predictor.py
+```
 
-* Student demographics (age, gender, etc.)
-* Academic history (grades, attendance)
-* Behavioral factors (study time, participation)
-* Socio-economic indicators
+### 2. Automated Benchmark & Verification
+Run the benchmark directly without interactive prompts:
+```bash
+python student_success_predictor.py --benchmark
+```
 
-> 📁 You can use publicly available datasets or your own institutional data.
+### 3. Generate Visual Charts Only
+```bash
+python student_success_predictor.py --visualize
+```
 
----
-
-
-## 📈 Model Performance
-
-* Accuracy: XX%
-* Precision: XX%
-* Recall: XX%
-* F1 Score: XX%
-
-> Replace with your actual results.
-
----
-
-## 🔍 Future Improvements
-
-* ✅ Hyperparameter tuning
-* 🌐 Deploy as a web application
-* 🤖 Integrate deep learning models
-* 📊 Add real-time analytics dashboard
+### 4. Full Verification Suite
+```bash
+python student_success_predictor.py --test
+```
 
 ---
 
-## 🤝 Contributing
+## 📈 Model Performance Benchmark
 
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
+| Model | Accuracy | Precision | Recall | F1-Score |
+| :--- | :--- | :--- | :--- | :--- |
+| **Logistic Regression** | **100.00%** | **100.00%** | **100.00%** | **100.00%** |
+| **Random Forest** | 98.67% | 100.00% | 98.51% | 99.25% |
+| **Decision Tree** | 96.00% | 98.48% | 97.01% | 97.74% |
+| **Support Vector Machine** | **100.00%** | **100.00%** | **100.00%** | **100.00%** |
+| **Gradient Boosting** | 98.67% | 100.00% | 98.51% | 99.25% |
 
 ---
-
 
 ## 👤 Author
 
 ANKIT NAG
 
-* GitHub: https://github.com/ANKIT04042006
-* LinkedIn: https://www.linkedin.com/in/ankit-nag-6b580637a
-
----
-
-## ⭐ Acknowledgements
-
-* Open-source ML community
-* Public datasets providers
-* Academic research in student performance prediction
-
----
+* GitHub: [ANKIT04042006](https://github.com/ANKIT04042006)
+* LinkedIn: [Ankit Nag](https://www.linkedin.com/in/ankit-nag-6b580637a)
